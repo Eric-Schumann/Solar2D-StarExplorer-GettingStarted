@@ -1,5 +1,5 @@
 local composer = require('composer')
-local AudioManager = require("lib.AudioManager")
+local AudioManager = require("src.lib.AudioManager")
 local scene = composer.newScene()
 
 local musicFile = "Escape_Looping.wav"
@@ -7,11 +7,11 @@ local sceneMusic
 
 
 local function gotoGame()
-    composer.gotoScene("game", { time=800, effect="crossFade" })
+    composer.gotoScene("src.scenes.game", { time=800, effect="crossFade" })
 end
 
 local function gotoHighScores()
-    composer.gotoScene("highscores", { time=800, effect="crossFade" })
+    composer.gotoScene("src.scenes.highscores", { time=800, effect="crossFade" })
 end
 
 function scene:create(event)
@@ -53,7 +53,7 @@ function scene:hide(event)
     if phase == "will" then 
     elseif phase == "did" then
         audio.stop(1)
-        composer.removeScene( "menu" )
+        composer.removeScene( "src.scenes.menu" )
     end
 end
 

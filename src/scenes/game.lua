@@ -1,7 +1,7 @@
 local composer = require("composer")
 local scene = composer.newScene( )
-local AudioManager = require('lib.AudioManager')
-local Ship = require("ship")
+local AudioManager = require('src.lib.AudioManager')
+local Ship = require("src.entities.ship")
 
 local physics = require('physics')
 physics.start()
@@ -158,7 +158,7 @@ end
 
 local function endGame()
     composer.setVariable( "finalScore", score )
-    composer.gotoScene("menu", { time=800, effect="crossFade" })
+    composer.gotoScene("src.scenes.menu", { time=800, effect="crossFade" })
 end
 
 local function onCollision(event)

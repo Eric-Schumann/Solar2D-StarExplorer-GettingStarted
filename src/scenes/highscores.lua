@@ -1,5 +1,5 @@
 local composer = require("composer")
-local AudioManager = require('lib.AudioManager')
+local AudioManager = require('src.lib.AudioManager')
 local scene = composer.newScene( )
 
 local json = require("json")
@@ -39,7 +39,7 @@ local function saveScores()
 end
 
 local function gotoMenu()
-    composer.gotoScene( "menu", { time=800, effect="crossFade" }  )
+    composer.gotoScene( "src.scenes.menu", { time=800, effect="crossFade" }  )
 end
 
 function scene:create(event)
